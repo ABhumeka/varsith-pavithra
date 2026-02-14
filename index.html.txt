@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pavithra ❤️ Varsith</title>
+
+<style>
+body{
+margin:0;
+text-align:center;
+font-family:Arial;
+background:linear-gradient(45deg,#ff4b5c,#ff9a9e);
+color:white;
+overflow:hidden;
+}
+
+.container{
+margin-top:40px;
+}
+
+h1{
+font-size:35px;
+}
+
+.slideshow{
+width:280px;
+height:350px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 20px white;
+}
+
+.slideshow img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+margin:15px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
+
+#yes{
+background:white;
+color:red;
+}
+
+#no{
+background:black;
+color:white;
+position:absolute;
+}
+
+#message{
+font-size:22px;
+margin-top:20px;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Pavithra ❤️ Varsith</h1>
+<h2>Do you love me? 💖</h2>
+
+<div class="slideshow">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<br>
+
+<button id="yes" onclick="love()">YES 💕</button>
+<button id="no" onmouseover="run()">NO 😜</button>
+
+<div id="message"></div>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3">
+</audio>
+
+<script>
+
+// Slideshow
+var images=["photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg"];
+var i=0;
+
+setInterval(function(){
+i++;
+if(i>=images.length){i=0;}
+document.getElementById("slide").src=images[i];
+},2000);
+
+// YES button
+function love(){
+document.getElementById("message").innerHTML=
+"Love you chellooooo 😘💖<br>Thangoooo 🥰💞<br>Chuchu paya 😚💕<br><br>Have a good day 🌸✨<br>I'm always there for you to irritate 😜, get angry 😤, and love you forever ❤️💍<br><br>Accept my love and marry me paaaa 💍👰🤵💖";
+}
+
+// NO button run away
+function run(){
+var x=Math.random()*window.innerWidth;
+var y=Math.random()*window.innerHeight;
+document.getElementById("no").style.left=x+"px";
+document.getElementById("no").style.top=y+"px";
+}
+
+// Hearts
+function heart(){
+var h=document.createElement("div");
+h.innerHTML="💖";
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>{h.remove();},5000);
+}
+setInterval(heart,300);
+
+</script>
+
+</body>
+</html>
